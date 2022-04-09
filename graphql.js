@@ -1,6 +1,8 @@
 // graphql.js
 
 const { ApolloServer, gql } = require('apollo-server-lambda');
+const express = require('express');
+const { logRequestMiddleware } = require('./middlewares/logRequestMiddleware');
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -18,4 +20,11 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-exports.graphqlHandler = server.createHandler();
+exports.graphqlHandler = server.createHandler({
+  expressAppFromMiddleware(middleware) {
+    const app = express();
+    app.use(logRequestMiddleware);
+    app.use(middleware);
+    return app;
+  }
+});

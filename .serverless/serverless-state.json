@@ -173,7 +173,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/apollo-lambda/dev/1649525245945-2022-04-09T17:27:25.945Z/apollo-lambda.zip"
+                "S3Key": "serverless/apollo-lambda/dev/1649543741301-2022-04-09T22:35:41.301Z/apollo-lambda.zip"
               },
               "Handler": "graphql.graphqlHandler",
               "Runtime": "nodejs14.x",
@@ -191,14 +191,14 @@
               "GraphqlLogGroup"
             ]
           },
-          "GraphqlLambdaVersiongerPCtMJDAiT9BNlQBeQSWT7Z5mPSmvrprNz82Lxx0M": {
+          "GraphqlLambdaVersion7VyrMoXK4IW2tCToBTCPn0uSsw0abrbIKpjk27D76M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GraphqlLambdaFunction"
               },
-              "CodeSha256": "6BcJym0tY3WuRhGyHf+zMa+RLKosueNfi9G99Ywd4mw="
+              "CodeSha256": "WG7I5NeMQ9CFty4qWqEsQ3YmjmaiJ8K3gxeeTbW5xgQ="
             }
           },
           "ApiGatewayRestApi": {
@@ -359,7 +359,7 @@
               "GraphqlLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1649525240373": {
+          "ApiGatewayDeployment1649543735926": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -423,7 +423,7 @@
           "GraphqlLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GraphqlLambdaVersiongerPCtMJDAiT9BNlQBeQSWT7Z5mPSmvrprNz82Lxx0M"
+              "Ref": "GraphqlLambdaVersion7VyrMoXK4IW2tCToBTCPn0uSsw0abrbIKpjk27D76M"
             },
             "Export": {
               "Name": "sls-apollo-lambda-dev-GraphqlLambdaFunctionQualifiedArn"
@@ -599,7 +599,7 @@
         "timeout": 6,
         "runtime": "nodejs14.x",
         "vpc": {},
-        "versionLogicalId": "GraphqlLambdaVersiongerPCtMJDAiT9BNlQBeQSWT7Z5mPSmvrprNz82Lxx0M"
+        "versionLogicalId": "GraphqlLambdaVersion7VyrMoXK4IW2tCToBTCPn0uSsw0abrbIKpjk27D76M"
       }
     },
     "configValidationMode": "warn",
@@ -618,7 +618,7 @@
     "artifact": "/Users/ranjith.zachariah/Documents/GitHub/rzachariah/apollo-graphql-lambda/.serverless/apollo-lambda.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/apollo-lambda/dev/1649525245945-2022-04-09T17:27:25.945Z",
+    "artifactDirectoryName": "serverless/apollo-lambda/dev/1649543741301-2022-04-09T22:35:41.301Z",
     "artifact": "apollo-lambda.zip"
   }
 }
