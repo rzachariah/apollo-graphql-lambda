@@ -4,6 +4,7 @@ service: apollo-lambda
 provider:
   name: aws
   runtime: nodejs14.x
+  logRetentionInDays: 30
 functions:
   graphql:
     # this is formatted as <FILENAME>.<HANDLER>
@@ -17,3 +18,5 @@ functions:
         path: /
         method: get
         cors: true
+plugins:
+  - serverless-offline
