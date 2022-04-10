@@ -29,12 +29,9 @@ const server = new ApolloServer({
     logger.defaultMeta = { requestId: context.awsRequestId, functionName };
     logger.info("Received request");
     return {
-      headers: event.headers,
-      functionName,
       event,
       context,
-      expressRequest: express.req,
-      logger,
+      express,
     };
   },
   logger,
