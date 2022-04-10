@@ -2,7 +2,7 @@
 
 const { ApolloServer, gql } = require("apollo-server-lambda");
 const express = require("express");
-const { logger } = require("./logger");
+const logger = require("./logger");
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -14,8 +14,8 @@ const typeDefs = gql`
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    hello: (parent, args, context) => {
-      context.logger.info("Inside hello");
+    hello: () => {
+      logger.info("Inside hello");
       return "Hello world!";
     },
   },
