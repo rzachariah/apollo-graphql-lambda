@@ -3,7 +3,6 @@
 const { ApolloServer, gql } = require("apollo-server-lambda");
 const express = require("express");
 const logger = require("./logger");
-const Actor = require("./Actor");
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -34,10 +33,7 @@ const server = new ApolloServer({
       functionVersion,
       url: originalUrl,
     };
-    const actor = new Actor({ sub: "D403", username: "Jean Claude" });
-    const logObject = { message: "Right on", foo: "boo", actor };
-    const s = JSON.stringify(logObject);
-    console.log(s);
+    logger.info("Received request");
     return {
       event,
       context,
