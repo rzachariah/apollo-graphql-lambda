@@ -38,6 +38,12 @@ const server = new ApolloServer({
     };
   },
   logger,
+  formatResponse: (response) => {
+    logger.info("Determined response", {
+      hasData: !!response.data,
+      hasErrors: !!response.errors,
+    });
+  },
 });
 
 exports.graphqlHandler = server.createHandler({
