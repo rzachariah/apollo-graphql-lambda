@@ -7,16 +7,19 @@ const logger = require("./logger");
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    hello: String
+    hello(name: String): String
   }
 `;
 
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    hello: () => {
+    hello: (_, { name }) => {
+      if (/\d/.test(name)) {
+        logger.error("Name contains numbers", { name });
+      }
       logger.info("Inside hello");
-      return "Hello world!";
+      return `Hello, ${name}`;
     },
   },
 };
